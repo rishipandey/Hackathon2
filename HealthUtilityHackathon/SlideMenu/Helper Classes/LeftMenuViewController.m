@@ -64,7 +64,7 @@
 			break;
 			
 		case 1:
-			cell.textLabel.text = @"Profile";
+			cell.textLabel.text = @"Nutrition";
 			break;
             
         case 2:
