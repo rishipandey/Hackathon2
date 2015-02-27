@@ -38,7 +38,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 4;
+	return 5;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -66,12 +66,16 @@
 		case 1:
 			cell.textLabel.text = @"Profile";
 			break;
+            
+        case 2:
+            cell.textLabel.text = @"Health Tracker";
+            break;
 			
-		case 2:
+		case 3:
 			cell.textLabel.text = @"Lipids burnt";
 			break;
 			
-		case 3:
+		case 4:
 			cell.textLabel.text = @"Sign Out";
 			break;
 	}
@@ -98,11 +102,14 @@
 			vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ProfileViewController"];
 			break;
 			
-		case 2:
+        case 2:
+            
+            break;
+		case 3:
 			vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"FriendsViewController"];
 			break;
 			
-		case 3:
+		case 4:
 			[self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 			[[SlideNavigationController sharedInstance] popToRootViewControllerAnimated:YES];
 			return;
