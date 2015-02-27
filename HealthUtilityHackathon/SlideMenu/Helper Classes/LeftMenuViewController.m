@@ -30,8 +30,10 @@
 	
 	self.tableView.separatorColor = [UIColor lightGrayColor];
 	
-	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenu.jpg"]];
-	self.tableView.backgroundView = imageView;
+	//UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenu.jpg"]];
+	//self.tableView.backgroundView = imageView;
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:220.0/255.0 green:0.0 blue:0.0 alpha:1];
 }
 
 #pragma mark - UITableView Delegate & Datasrouce -

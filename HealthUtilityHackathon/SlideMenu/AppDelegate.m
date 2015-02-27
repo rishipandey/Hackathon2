@@ -44,6 +44,7 @@
     self.carbohydrateCount = [NSNumber numberWithInt:588];
     self.fatCount = [NSNumber numberWithInt:107];
 
+    self.window.tintColor = [UIColor redColor];
 	
     // Override point for customization after application launch.
     return YES;
