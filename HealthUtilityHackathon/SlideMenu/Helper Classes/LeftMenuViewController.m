@@ -107,7 +107,7 @@
 
             break;
 		case 3:
-			vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"FriendsViewController"];
+			vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"LipidsBurntViewController"];
 			break;
 			
 		case 4:

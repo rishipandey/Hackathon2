@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="yzD-f0-X8n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="yzD-f0-X8n">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -147,7 +147,6 @@
                     <navigationItem key="navigationItem" title="Login" id="huN-S6-yGa"/>
                     <connections>
                         <segue destination="nrg-5w-bbF" kind="push" identifier="FakeSegue" id="Rkp-YM-Gz0"/>
-                        <segue destination="qY1-Jo-UbZ" kind="push" identifier="FakeSegue33" id="37q-Mo-UFN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC9-GK-F3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,50 +191,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIU-qR-dGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="437"/>
-        </scene>
-        <!--Friends-->
-        <scene sceneID="Hbs-BS-FvF">
-            <objects>
-                <tableViewController storyboardIdentifier="FriendsViewController" title="Friends" id="qY1-Jo-UbZ" customClass="LipidsBurntViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="aah-ni-z8T"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="view" destination="6RN-u2-QtO" id="4eW-Lb-FHf"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TeQ-ZL-OLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="6RN-u2-QtO">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-            </objects>
-            <point key="canvasLocation" x="1042" y="1101"/>
-        </scene>
-        <!--Friends-->
-        <scene sceneID="yJW-sY-3g9">
-            <objects>
-                <viewController title="Friends" id="yDw-XY-MRH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iHZ-lt-TwS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Info goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fYW-yF-XIJ">
-                                <rect key="frame" x="107" y="43" width="163" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Friend Info" id="ZvF-si-2WZ"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5rh-jR-0iE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1503" y="1100"/>
         </scene>
         <!--Right Menu Only-->
         <scene sceneID="w1a-xD-Zgv">
@@ -347,6 +302,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agL-dN-C7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1875" y="201"/>
+        </scene>
+        <!--Lipids Burnt-->
+        <scene sceneID="wwU-EG-9Wp">
+            <objects>
+                <viewController storyboardIdentifier="LipidsBurntViewController" id="48A-Eg-LSy" userLabel="Lipids Burnt" customClass="LipidsBurntViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cZU-NN-Vcc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="W0f-tW-fQY">
+                                <rect key="frame" x="38" y="85" width="230" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="This Week"/>
+                                    <segment title="Today"/>
+                                    <segment title="This Month"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentSelectionChanged:" destination="48A-Eg-LSy" eventType="valueChanged" id="Q79-Ag-Tua"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="vca-bD-VT6"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="W0f-tW-fQY" id="y8s-8T-Yyf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AyU-8K-s2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="-222"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
