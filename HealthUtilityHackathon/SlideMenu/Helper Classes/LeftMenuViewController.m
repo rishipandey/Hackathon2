@@ -103,7 +103,8 @@
 			break;
 			
         case 2:
-            
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"AAPLDetailViewController"];
+
             break;
 		case 3:
 			vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"FriendsViewController"];
