@@ -12,4 +12,6 @@
 
 @interface SocialViewController : UIViewController <SlideNavigationControllerDelegate>
 
+- (IBAction)takeChallangeButtonPressed:(id)sender;
+
 @end

@@ -8,6 +8,8 @@
 
 #import "SocialViewController.h"
 
+#import "TakeChallangeViewController.h"
+
 @interface SocialViewController ()
 
 @end
@@ -31,6 +33,16 @@
 - (BOOL)slideNavigationControllerShouldDisplayRightMenu
 {
     return NO;
+}
+
+
+- (IBAction)takeChallangeButtonPressed:(id)sender {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+                                                             bundle: nil];
+    TakeChallangeViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TakeChallangeViewController"];
+    
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 
