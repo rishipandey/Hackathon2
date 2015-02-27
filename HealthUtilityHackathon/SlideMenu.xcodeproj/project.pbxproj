@@ -40,6 +40,7 @@
 		15E7D31F190C33A5002EAE3F /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15E7D31D190C33A5002EAE3F /* leftMenu.jpg */; };
 		15E7D321190C3B75002EAE3F /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15E7D320190C3B75002EAE3F /* rightMenu.jpg */; };
 		15E7D327190C3DAE002EAE3F /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E7D326190C3DAE002EAE3F /* gear.png */; };
+		90E8682E1AA12DAE007A886C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E8682D1AA12DAE007A886C /* CoreMotion.framework */; };
 		E796D8D31AA0F49500EE1603 /* ANPopoverSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D8D01AA0F49500EE1603 /* ANPopoverSlider.m */; };
 		E796D8D41AA0F49500EE1603 /* ANPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D8D21AA0F49500EE1603 /* ANPopoverView.m */; };
 		E796D8DD1AA0F5AF00EE1603 /* slider_minimum.png in Resources */ = {isa = PBXBuildFile; fileRef = E796D8D51AA0F5AF00EE1603 /* slider_minimum.png */; };
@@ -139,6 +140,7 @@
 		15E7D31D190C33A5002EAE3F /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
 		15E7D320190C3B75002EAE3F /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
 		15E7D326190C3DAE002EAE3F /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		90E8682D1AA12DAE007A886C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E796D8CF1AA0F49500EE1603 /* ANPopoverSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPopoverSlider.h; sourceTree = "<group>"; };
 		E796D8D01AA0F49500EE1603 /* ANPopoverSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPopoverSlider.m; sourceTree = "<group>"; };
 		E796D8D11AA0F49500EE1603 /* ANPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPopoverView.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E8682E1AA12DAE007A886C /* CoreMotion.framework in Frameworks */,
 				15CBD699172A57F100F0C53E /* QuartzCore.framework in Frameworks */,
 				15371EE31728E3B400A508F4 /* UIKit.framework in Frameworks */,
 				15371EE51728E3B400A508F4 /* Foundation.framework in Frameworks */,
@@ -241,6 +244,7 @@
 		15371EE11728E3B400A508F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90E8682D1AA12DAE007A886C /* CoreMotion.framework */,
 				15CBD698172A57F100F0C53E /* QuartzCore.framework */,
 				15371EE21728E3B400A508F4 /* UIKit.framework */,
 				15371EE41728E3B400A508F4 /* Foundation.framework */,
@@ -732,6 +736,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideMenu/SlideMenu-Prefix.pch";
 				INFOPLIST_FILE = "SlideMenu/SlideMenu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -744,6 +749,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideMenu/SlideMenu-Prefix.pch";
 				INFOPLIST_FILE = "SlideMenu/SlideMenu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

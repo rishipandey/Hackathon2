@@ -24,10 +24,16 @@ Abstract:
 	NSDateFormatter *_dateFormatter;
 	NSString *_currentActivity;
 	NSInteger _currentSteps;
+    
 }
 #pragma mark - Managing the detail item
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self refreshDays];
 
+}
 #pragma mark - SlideNavigationController Methods -
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
@@ -56,8 +62,8 @@ Abstract:
 
 - (void)setDetailItem:(id)newDetailItem
 {
-	if (_detailItem != newDetailItem) {
-		_detailItem = newDetailItem;
+	//if (_detailItem != newDetailItem) {
+	//	_detailItem = newDetailItem;
 
 		// Update the view.
 		[self configureView];
@@ -72,25 +78,60 @@ Abstract:
 			if ([(AAPLMotionActivityQuery *)_detailItem isToday]) {
 				[_activityDataManager startStepUpdates:^(NSNumber *stepCount) {
 					_currentSteps = [stepCount integerValue];
-					NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:1]];
+					NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0]];
 					[self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
 				}];
 				[_activityDataManager startMotionUpdates:^(AAPLActivityType type) {
 					_currentActivity = [AAPLActivityDataManager activityTypeToString:type];
-					NSArray *indexPaths = @[[NSIndexPath indexPathForRow:4 inSection:0]];
-					[self.tableView reloadRowsAtIndexPaths:indexPaths
-											withRowAnimation:UITableViewRowAnimationNone];
+//					NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0]];
+//					[self.tableView reloadRowsAtIndexPaths:indexPaths
+//											withRowAnimation:UITableViewRowAnimationNone];
 				}];
 			}
 		}];
-	};
+	//};
 }
+
+
+- (void)refreshDays
+{
+    if (!_activityDataManager) {
+        _activityDataManager = [[AAPLActivityDataManager alloc] init];
+    }
+    if ([AAPLActivityDataManager checkAvailability]) {
+        [_activityDataManager checkAuthorization:^(BOOL authorized) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (authorized) {
+                    NSDate *date = [NSDate date];
+                    for (int i = 0; i < 1; ++i){
+                        AAPLMotionActivityQuery *query = [AAPLMotionActivityQuery queryStartingFromDate:date offsetByDay:-i];
+                        _detailItem = query;
+                        [self setDetailItem:_detailItem];
+                        [self.tableView reloadData];
+                    }
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"M7 not authorized"
+                                                                    message:@"Please enable Motion Activity for this application." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+                    [alert show];
+                }
+            });
+            // We only need the data manager to check for authorization.
+          //  _activityDataManager = nil;
+        }];
+        
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"M7 not available"
+                                                        message:@"No activity or step counting is available" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDays) name:UIApplicationWillEnterForegroundNotification object:nil];
     self.navigationItem.title = @"Health Tracker";
     
 	self.tableView.sectionHeaderHeight = 60;
@@ -142,10 +183,12 @@ Abstract:
 
             UILabel *lblDuration = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 70, 20)];
             [cell.contentView addSubview:lblDuration];
+            lblDuration.text = @"";
             lblDuration.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.walkingDuration];
             UILabel *lblCalories = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 70, 20)];
             [cell.contentView addSubview:lblCalories];
-            lblCalories.text = [NSString stringWithFormat:@"%0.1f kCal",(_activityDataManager.walkingDuration/60)*1];
+            lblCalories.text = @"";
+            lblCalories.text = [NSString stringWithFormat:@"%0.1f Cal",(_activityDataManager.walkingDuration/60)*1];
             UILabel *lblDurationVal = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 70, 20)];
             [cell.contentView addSubview:lblDurationVal];
             lblDurationVal.text = @"Duration:";
@@ -159,7 +202,7 @@ Abstract:
 	} else if (indexPath.section == 0) {
         
 		cell.textLabel.text = [(AAPLMotionActivityQuery *)_detailItem isToday] ? @"Live Step Counts" : @"Step Counts";
-		cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",
 									[_activityDataManager.stepCounts longValue] + _currentSteps];
         cell.detailTextLabel.textColor = [UIColor blackColor];
 	}
@@ -169,10 +212,12 @@ Abstract:
             cell.detailTextLabel.hidden = YES;
             UILabel *lblDuration = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 70, 20)];
             [cell.contentView addSubview:lblDuration];
+            lblDuration.text =@"";
             lblDuration.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.runningDuration];
             UILabel *lblCalories = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 70, 20)];
             [cell.contentView addSubview:lblCalories];
-            lblCalories.text = [NSString stringWithFormat:@"%0.1f  kCal",(_activityDataManager.runningDuration/60)*1];
+            lblCalories.text  =@"";
+            lblCalories.text = [NSString stringWithFormat:@"%0.1f  Cal",(_activityDataManager.runningDuration/60)*1];
             UILabel *lblDurationVal = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 70, 20)];
             [cell.contentView addSubview:lblDurationVal];
             lblDurationVal.text = @"Duration:";
