@@ -39,6 +39,11 @@
         NSLog(@"Revealed %@", menu);
     }];
 	
+    self.totalcalories = [NSNumber numberWithInt:2976];
+    self.proteinCount = [NSNumber numberWithInt:173];
+    self.carbohydrateCount = [NSNumber numberWithInt:588];
+    self.fatCount = [NSNumber numberWithInt:107];
+
 	
     // Override point for customization after application launch.
     return YES;

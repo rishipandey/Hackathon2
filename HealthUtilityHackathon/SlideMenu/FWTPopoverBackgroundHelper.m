@@ -192,7 +192,7 @@ typedef NSUInteger AxisType;
     }
     
     //  render the fill without shadow
-    self.fillColor = savedFillColorRef;
+    self.fillColor = [UIColor clearColor].CGColor;
     self.shadowOpacity = .0f;
     [self renderInContext:ctx];
     

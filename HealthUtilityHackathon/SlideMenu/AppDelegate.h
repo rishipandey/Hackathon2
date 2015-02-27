@@ -14,5 +14,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) NSNumber *totalcalories;
+@property (nonatomic, strong) NSNumber *proteinCount;
+@property (nonatomic, strong) NSNumber *carbohydrateCount;
+@property (nonatomic, strong) NSNumber *fatCount;
 
 @end
