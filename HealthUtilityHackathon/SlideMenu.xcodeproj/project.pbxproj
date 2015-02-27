@@ -52,6 +52,8 @@
 		FB2415751AA0F23F00BA381B /* OVGraphViewPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB24156E1AA0F23F00BA381B /* OVGraphViewPoint.m */; };
 		FB2415761AA0F23F00BA381B /* OVGraphYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2415701AA0F23F00BA381B /* OVGraphYIndicatorView.m */; };
 		FB2415771AA0F23F00BA381B /* OVPlotScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2415721AA0F23F00BA381B /* OVPlotScrollView.m */; };
+		FB24157A1AA10D2100BA381B /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2415791AA10D2100BA381B /* SocialViewController.m */; };
+		FB24157C1AA10E2F00BA381B /* 001_bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = FB24157B1AA10E2F00BA381B /* 001_bkg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,9 @@
 		FB2415701AA0F23F00BA381B /* OVGraphYIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVGraphYIndicatorView.m; sourceTree = "<group>"; };
 		FB2415711AA0F23F00BA381B /* OVPlotScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVPlotScrollView.h; sourceTree = "<group>"; };
 		FB2415721AA0F23F00BA381B /* OVPlotScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVPlotScrollView.m; sourceTree = "<group>"; };
+		FB2415781AA10D2100BA381B /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		FB2415791AA10D2100BA381B /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
+		FB24157B1AA10E2F00BA381B /* 001_bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001_bkg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +293,8 @@
 				15CBD67B172A15F900F0C53E /* ProfileViewController.m */,
 				15CBD687172A22B600F0C53E /* ProfileDetailViewController.h */,
 				15CBD688172A22B700F0C53E /* ProfileDetailViewController.m */,
+				FB2415781AA10D2100BA381B /* SocialViewController.h */,
+				FB2415791AA10D2100BA381B /* SocialViewController.m */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -304,6 +311,7 @@
 		15E7D319190C2894002EAE3F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FB24157B1AA10E2F00BA381B /* 001_bkg.png */,
 				15E7D326190C3DAE002EAE3F /* gear.png */,
 				15E7D320190C3B75002EAE3F /* rightMenu.jpg */,
 				15E7D31D190C33A5002EAE3F /* leftMenu.jpg */,
@@ -431,6 +439,7 @@
 				15371EF51728E3B400A508F4 /* Default.png in Resources */,
 				15371EF71728E3B400A508F4 /* Default@2x.png in Resources */,
 				15E7D31F190C33A5002EAE3F /* leftMenu.jpg in Resources */,
+				FB24157C1AA10E2F00BA381B /* 001_bkg.png in Resources */,
 				15371EF91728E3B400A508F4 /* Default-568h@2x.png in Resources */,
 				15E7D31B190C289E002EAE3F /* animation.png in Resources */,
 				15371EFC1728E3B400A508F4 /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -488,6 +497,7 @@
 				FB2415741AA0F23F00BA381B /* OVGraphView.m in Sources */,
 				FB2415761AA0F23F00BA381B /* OVGraphYIndicatorView.m in Sources */,
 				FB2415731AA0F23F00BA381B /* OVGraphPlotView.m in Sources */,
+				FB24157A1AA10D2100BA381B /* SocialViewController.m in Sources */,
 				15CBD67D172A15F900F0C53E /* LeftMenuViewController.m in Sources */,
 				90E8682C1AA10A38007A886C /* XYPieChart.m in Sources */,
 				FB2415771AA0F23F00BA381B /* OVPlotScrollView.m in Sources */,
