@@ -11,7 +11,9 @@ Abstract:
 
 @import UIKit;
 
-@interface AAPLDetailViewController : UITableViewController
+#import "SlideNavigationController.h"
+
+@interface AAPLDetailViewController : UITableViewController <SlideNavigationControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 

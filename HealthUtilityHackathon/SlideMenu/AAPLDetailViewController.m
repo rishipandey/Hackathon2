@@ -27,6 +27,20 @@ Abstract:
 }
 #pragma mark - Managing the detail item
 
+
+#pragma mark - SlideNavigationController Methods -
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return NO;
+}
+
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super initWithCoder:aDecoder];
@@ -75,6 +89,10 @@ Abstract:
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+    
+    
+    self.navigationItem.title = @"Health Tracker";
+    
 	self.tableView.sectionHeaderHeight = 60;
 	self.tableView.sectionFooterHeight = 60;
 	// Do any additional setup after loading the view, typically from a nib.

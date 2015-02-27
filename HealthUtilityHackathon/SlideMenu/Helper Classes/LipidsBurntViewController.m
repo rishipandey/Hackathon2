@@ -17,6 +17,9 @@
 {
 	[super viewDidLoad];
     
+    
+    self.navigationItem.title = @"Lipids Burnt";
+    
     self.segmentControl.selectedSegmentIndex = 1;
 }
 
