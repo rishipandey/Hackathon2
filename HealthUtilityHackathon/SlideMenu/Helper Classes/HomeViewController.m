@@ -24,6 +24,7 @@
 {
     [super viewDidLoad];
 	
+    self.title = @"DashBoard";
 	self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 503);
 	self.portraitSlideOffsetSegment.selectedSegmentIndex = [self indexFromPixels:[SlideNavigationController sharedInstance].portraitSlideOffset];
 	self.landscapeSlideOffsetSegment.selectedSegmentIndex = [self indexFromPixels:[SlideNavigationController sharedInstance].landscapeSlideOffset];
