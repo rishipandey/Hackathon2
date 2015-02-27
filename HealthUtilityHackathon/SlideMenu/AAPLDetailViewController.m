@@ -16,6 +16,10 @@ Abstract:
 
 @interface AAPLDetailViewController ()
 - (void)configureView;
+@property(nonatomic,strong)UILabel *lblDuration;
+@property(nonatomic,strong)UILabel *lblCalories;
+@property(nonatomic,strong)UILabel *lblDurationRun;
+@property(nonatomic,strong)UILabel *lblCaloriesRun;
 @end
 
 @implementation AAPLDetailViewController
@@ -33,6 +37,11 @@ Abstract:
     [super viewWillAppear:animated];
     [self refreshDays];
 
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+   // _activityDataManager = nil;
 }
 #pragma mark - SlideNavigationController Methods -
 
@@ -180,15 +189,19 @@ Abstract:
 //			cell.textLabel.text = @"Calories:";
 //            cell.textLabel.frame = CGRectMake(0, 10, 100, 20);
 //			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ --%0.1f kCal",[AAPLDetailViewController formatTimeInterval:_activityDataManager.walkingDuration],(_activityDataManager.walkingDuration/60)*1];
-
-            UILabel *lblDuration = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 70, 20)];
-            [cell.contentView addSubview:lblDuration];
-            lblDuration.text = @"";
-            lblDuration.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.walkingDuration];
-            UILabel *lblCalories = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 70, 20)];
-            [cell.contentView addSubview:lblCalories];
-            lblCalories.text = @"";
-            lblCalories.text = [NSString stringWithFormat:@"%0.1f Cal",(_activityDataManager.walkingDuration/60)*1];
+            [_lblDuration removeFromSuperview];
+            _lblDuration = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 100, 20)];
+            [cell.contentView addSubview:_lblDuration];
+            _lblDuration.backgroundColor = [UIColor clearColor];
+            _lblDuration.text = nil;
+            _lblDuration.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.walkingDuration];
+            
+            [_lblCalories removeFromSuperview];
+            _lblCalories = nil;
+            _lblCalories = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 100, 20)];
+            [cell addSubview:_lblCalories];
+            _lblCalories.text = @"";
+            _lblCalories.text = [NSString stringWithFormat:@"%0.1f Cal",(_activityDataManager.walkingDuration/60)*1];
             UILabel *lblDurationVal = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 70, 20)];
             [cell.contentView addSubview:lblDurationVal];
             lblDurationVal.text = @"Duration:";
@@ -210,14 +223,17 @@ Abstract:
         if (indexPath.row == 0) {
             cell.textLabel.hidden = YES;
             cell.detailTextLabel.hidden = YES;
-            UILabel *lblDuration = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 70, 20)];
-            [cell.contentView addSubview:lblDuration];
-            lblDuration.text =@"";
-            lblDuration.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.runningDuration];
-            UILabel *lblCalories = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 70, 20)];
-            [cell.contentView addSubview:lblCalories];
-            lblCalories.text  =@"";
-            lblCalories.text = [NSString stringWithFormat:@"%0.1f  Cal",(_activityDataManager.runningDuration/60)*1];
+            [_lblDurationRun removeFromSuperview];
+            _lblDurationRun = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 70, 20)];
+            [cell.contentView addSubview:_lblDurationRun];
+            _lblDurationRun.text =@"";
+            _lblDurationRun.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.runningDuration];
+            
+            [_lblCaloriesRun removeFromSuperview];
+            _lblCaloriesRun = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 70, 20)];
+            [cell.contentView addSubview:_lblCaloriesRun];
+            _lblCaloriesRun.text  =@"";
+            _lblCaloriesRun.text = [NSString stringWithFormat:@"%0.1f  Cal",(_activityDataManager.runningDuration/60)*1];
             UILabel *lblDurationVal = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 70, 20)];
             [cell.contentView addSubview:lblDurationVal];
             lblDurationVal.text = @"Duration:";
@@ -259,7 +275,7 @@ Abstract:
 
 + (NSString *)formatTimeInterval:(NSTimeInterval)interval
 {
-	return [NSString stringWithFormat:@"%2uh   %2um",
+	return [NSString stringWithFormat:@"%2uh  %2um",
 		(int)(interval / 3600),
 		(int)(interval / 60) % 60];
 }
