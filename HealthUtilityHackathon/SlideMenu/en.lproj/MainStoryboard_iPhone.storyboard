@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="yzD-f0-X8n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="yzD-f0-X8n">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -77,9 +77,43 @@
                     <view key="view" contentMode="scaleToFill" id="KmS-nM-BIh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="DGm-Lm-CLr" customClass="XYPieChart">
+                                <rect key="frame" x="85" y="88" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="qY3-yw-gfb" customClass="XYPieChart">
+                                <rect key="frame" x="84" y="383" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="gY0-aQ-73J" customClass="XYPieChart">
+                                <rect key="frame" x="5" y="256" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Usl-qK-M96" customClass="XYPieChart">
+                                <rect key="frame" x="117" y="256" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="yLP-3X-smG" customClass="XYPieChart">
+                                <rect key="frame" x="224" y="256" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="YV6-8b-6Lr"/>
+                    <connections>
+                        <outlet property="burnCalorieView" destination="qY3-yw-gfb" id="QwH-qg-Vui"/>
+                        <outlet property="calorieIntakeView" destination="DGm-Lm-CLr" id="dIc-wh-9Ma"/>
+                        <outlet property="carboHydrateView" destination="Usl-qK-M96" id="4QO-AQ-LhM"/>
+                        <outlet property="fatView" destination="yLP-3X-smG" id="rNX-Ub-MbS"/>
+                        <outlet property="protineView" destination="gY0-aQ-73J" id="Jqb-rV-bps"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wf8-rc-ajb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
