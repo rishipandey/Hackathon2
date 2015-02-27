@@ -40,7 +40,12 @@
 		15E7D31F190C33A5002EAE3F /* leftMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15E7D31D190C33A5002EAE3F /* leftMenu.jpg */; };
 		15E7D321190C3B75002EAE3F /* rightMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15E7D320190C3B75002EAE3F /* rightMenu.jpg */; };
 		15E7D327190C3DAE002EAE3F /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E7D326190C3DAE002EAE3F /* gear.png */; };
-		997929E2187336AA00716C77 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997929E1187336AA00716C77 /* FriendsViewController.m */; };
+		997929E2187336AA00716C77 /* LipidsBurntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997929E1187336AA00716C77 /* LipidsBurntViewController.m */; };
+		FB2415731AA0F23F00BA381B /* OVGraphPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB24156A1AA0F23F00BA381B /* OVGraphPlotView.m */; };
+		FB2415741AA0F23F00BA381B /* OVGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB24156C1AA0F23F00BA381B /* OVGraphView.m */; };
+		FB2415751AA0F23F00BA381B /* OVGraphViewPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB24156E1AA0F23F00BA381B /* OVGraphViewPoint.m */; };
+		FB2415761AA0F23F00BA381B /* OVGraphYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2415701AA0F23F00BA381B /* OVGraphYIndicatorView.m */; };
+		FB2415771AA0F23F00BA381B /* OVPlotScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2415721AA0F23F00BA381B /* OVPlotScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,8 +109,18 @@
 		15E7D31D190C33A5002EAE3F /* leftMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftMenu.jpg; sourceTree = "<group>"; };
 		15E7D320190C3B75002EAE3F /* rightMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightMenu.jpg; sourceTree = "<group>"; };
 		15E7D326190C3DAE002EAE3F /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
-		997929E0187336AA00716C77 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
-		997929E1187336AA00716C77 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		997929E0187336AA00716C77 /* LipidsBurntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LipidsBurntViewController.h; sourceTree = "<group>"; };
+		997929E1187336AA00716C77 /* LipidsBurntViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LipidsBurntViewController.m; sourceTree = "<group>"; };
+		FB2415691AA0F23F00BA381B /* OVGraphPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVGraphPlotView.h; sourceTree = "<group>"; };
+		FB24156A1AA0F23F00BA381B /* OVGraphPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVGraphPlotView.m; sourceTree = "<group>"; };
+		FB24156B1AA0F23F00BA381B /* OVGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVGraphView.h; sourceTree = "<group>"; };
+		FB24156C1AA0F23F00BA381B /* OVGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVGraphView.m; sourceTree = "<group>"; };
+		FB24156D1AA0F23F00BA381B /* OVGraphViewPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVGraphViewPoint.h; sourceTree = "<group>"; };
+		FB24156E1AA0F23F00BA381B /* OVGraphViewPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVGraphViewPoint.m; sourceTree = "<group>"; };
+		FB24156F1AA0F23F00BA381B /* OVGraphYIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVGraphYIndicatorView.h; sourceTree = "<group>"; };
+		FB2415701AA0F23F00BA381B /* OVGraphYIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVGraphYIndicatorView.m; sourceTree = "<group>"; };
+		FB2415711AA0F23F00BA381B /* OVPlotScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVPlotScrollView.h; sourceTree = "<group>"; };
+		FB2415721AA0F23F00BA381B /* OVPlotScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVPlotScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +180,7 @@
 		15371EE81728E3B400A508F4 /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				FB2415681AA0F23F00BA381B /* OVGraphView */,
 				15E7D319190C2894002EAE3F /* Images */,
 				15CBD675172A15F900F0C53E /* Helper Classes */,
 				15371F241728E43600A508F4 /* Source */,
@@ -248,8 +264,8 @@
 				15E7D317190C24E3002EAE3F /* RightMenuViewController.m */,
 				15CBD676172A15F900F0C53E /* HomeViewController.h */,
 				15CBD677172A15F900F0C53E /* HomeViewController.m */,
-				997929E0187336AA00716C77 /* FriendsViewController.h */,
-				997929E1187336AA00716C77 /* FriendsViewController.m */,
+				997929E0187336AA00716C77 /* LipidsBurntViewController.h */,
+				997929E1187336AA00716C77 /* LipidsBurntViewController.m */,
 				15CBD67A172A15F900F0C53E /* ProfileViewController.h */,
 				15CBD67B172A15F900F0C53E /* ProfileViewController.m */,
 				15CBD687172A22B600F0C53E /* ProfileDetailViewController.h */,
@@ -276,6 +292,23 @@
 				15E7D31A190C289E002EAE3F /* animation.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		FB2415681AA0F23F00BA381B /* OVGraphView */ = {
+			isa = PBXGroup;
+			children = (
+				FB2415691AA0F23F00BA381B /* OVGraphPlotView.h */,
+				FB24156A1AA0F23F00BA381B /* OVGraphPlotView.m */,
+				FB24156B1AA0F23F00BA381B /* OVGraphView.h */,
+				FB24156C1AA0F23F00BA381B /* OVGraphView.m */,
+				FB24156D1AA0F23F00BA381B /* OVGraphViewPoint.h */,
+				FB24156E1AA0F23F00BA381B /* OVGraphViewPoint.m */,
+				FB24156F1AA0F23F00BA381B /* OVGraphYIndicatorView.h */,
+				FB2415701AA0F23F00BA381B /* OVGraphYIndicatorView.m */,
+				FB2415711AA0F23F00BA381B /* OVPlotScrollView.h */,
+				FB2415721AA0F23F00BA381B /* OVPlotScrollView.m */,
+			);
+			path = OVGraphView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15E7D318190C24E3002EAE3F /* RightMenuViewController.m in Sources */,
+				FB2415751AA0F23F00BA381B /* OVGraphViewPoint.m in Sources */,
 				15C9AC1D1895A81D006E6F27 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				15C9AC171895A7E7006E6F27 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				15371EEF1728E3B400A508F4 /* main.m in Sources */,
@@ -405,8 +439,12 @@
 				15371F281728E44E00A508F4 /* SlideNavigationController.m in Sources */,
 				15C9AC111895A7BF006E6F27 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				15CBD67C172A15F900F0C53E /* HomeViewController.m in Sources */,
-				997929E2187336AA00716C77 /* FriendsViewController.m in Sources */,
+				997929E2187336AA00716C77 /* LipidsBurntViewController.m in Sources */,
+				FB2415741AA0F23F00BA381B /* OVGraphView.m in Sources */,
+				FB2415761AA0F23F00BA381B /* OVGraphYIndicatorView.m in Sources */,
+				FB2415731AA0F23F00BA381B /* OVGraphPlotView.m in Sources */,
 				15CBD67D172A15F900F0C53E /* LeftMenuViewController.m in Sources */,
+				FB2415771AA0F23F00BA381B /* OVPlotScrollView.m in Sources */,
 				15C9AC1A1895A80E006E6F27 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				15CBD67E172A15F900F0C53E /* ProfileViewController.m in Sources */,
 				15CBD689172A22B700F0C53E /* ProfileDetailViewController.m in Sources */,

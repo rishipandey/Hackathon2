@@ -68,7 +68,7 @@
 			break;
 			
 		case 2:
-			cell.textLabel.text = @"Friends";
+			cell.textLabel.text = @"Lipids burnt";
 			break;
 			
 		case 3:

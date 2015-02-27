@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
 
-@interface FriendsViewController : UITableViewController <SlideNavigationControllerDelegate>
+@interface LipidsBurntViewController : UIViewController <SlideNavigationControllerDelegate>
 
 @end
