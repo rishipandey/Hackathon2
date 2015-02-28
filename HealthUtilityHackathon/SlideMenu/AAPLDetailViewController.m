@@ -47,7 +47,9 @@ Abstract:
     
     float totalCalBurned = [_lblCalories.text floatValue] + [_lblDurationRun.text floatValue];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"BURN" object:[NSNumber numberWithFloat:totalCalBurned]];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:[NSNumber numberWithFloat:totalCalBurned] forKey:@"totalCalBurned"];
+    [userDefaults synchronize];
 }
 
 #pragma mark - SlideNavigationController Methods -

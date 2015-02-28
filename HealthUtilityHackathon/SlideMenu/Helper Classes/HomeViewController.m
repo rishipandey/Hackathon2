@@ -15,7 +15,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    
+    self.calorieBurned = [[[NSUserDefaults standardUserDefaults] objectForKey:@"totalCalBurned"] floatValue];
+
     ///Burn
     self.slicesBurn = [NSMutableArray arrayWithCapacity:2];
     NSNumber *oneBurn;
@@ -41,18 +42,6 @@
     [self.burnCalorieView reloadData];
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-   // [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BURN" object:nil];
-}
-
-
-- (void)updateBurnData:(NSNotification*)note {
-    self.calorieBurned = [note.object floatValue];
-}
-
 /*
  #define RFERENCE_INTAKE_CAL @"3000"
  #define RFERENCE_INTAKE_PROT @"50"
@@ -63,11 +52,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateBurnData:)
-                                                 name:@"BURN"
-                                               object:nil];
 	
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:220.0/255.0 green:0.0 blue:0.0 alpha:1]];
 //    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
@@ -123,6 +107,7 @@
     [self.slicesFat addObject:twoFat];
     
     ///Burn
+    self.calorieBurned = [[[NSUserDefaults standardUserDefaults] objectForKey:@"totalCalBurned"] floatValue];
     self.slicesBurn = [NSMutableArray arrayWithCapacity:2];
     
     NSNumber *oneBurn = [NSNumber numberWithFloat: self.calorieBurned == 0.0 ? 0.0 : 3000.0];

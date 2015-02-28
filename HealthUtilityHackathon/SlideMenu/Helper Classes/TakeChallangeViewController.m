@@ -22,24 +22,13 @@
     
     self.navigationItem.title = @"Take Challenge";
     self.mytextField.delegate = self;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateBurnData:)
-                                                 name:@"BURN"
-                                               object:nil];
 }
 
-
-- (void)updateBurnData:(NSNotification*)note {
-    self.calBurned = [note.object floatValue];
-}
-
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    [self.calorieIntakeView reloadData];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    
+//    [self.calorieIntakeView reloadData];
+//}
 
 #pragma mark - SlideNavigationController Methods -
 
@@ -60,17 +49,25 @@
     
     self.target = [textField.text floatValue];
     
-    [self.slices removeAllObjects];
+    if (self.slices) {
+        [self.slices removeAllObjects];
+    }
+    else {
+        self.slices = [NSMutableArray array];
+    }
+    
     NSNumber *oneBurn;
     NSNumber *twoBurn;
     
+    self.calBurned = [[[NSUserDefaults standardUserDefaults] objectForKey:@"totalCalBurned"] floatValue];
+    
     if (self.calBurned == 0.0) {
         oneBurn = [NSNumber numberWithFloat: 0.0];
-        twoBurn = [NSNumber numberWithFloat: (3000.0- self.calBurned)];
+        twoBurn = [NSNumber numberWithFloat: (self.target- self.calBurned)];
     }
     else {
-        oneBurn = [NSNumber numberWithFloat: self.calBurned];
-        twoBurn = [NSNumber numberWithFloat: (3000.0- self.calBurned)];
+        oneBurn = [NSNumber numberWithFloat: (self.target- self.calBurned)];
+        twoBurn = [NSNumber numberWithFloat: self.calBurned];
     }
     [self.slices addObject:oneBurn];
     [self.slices addObject:twoBurn];
