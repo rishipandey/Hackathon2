@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"Our recommendations";
+    
     self.imageCount = 1;
     self.totalImageCount = 4;
     
@@ -104,7 +106,7 @@
 }
 
 - (void)startTimer {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:4.0f
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0f
                                                   target:self
                                                 selector:@selector(startTimerAndChangeImage)
                                                 userInfo:nil
