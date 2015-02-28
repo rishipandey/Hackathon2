@@ -39,6 +39,7 @@
         NSLog(@"Revealed %@", menu);
     }];
 	
+     
     self.totalcalories = [NSNumber numberWithInt:2976];
     self.proteinCount = [NSNumber numberWithInt:173];
     self.carbohydrateCount = [NSNumber numberWithInt:588];

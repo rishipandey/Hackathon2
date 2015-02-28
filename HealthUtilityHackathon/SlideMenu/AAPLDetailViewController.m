@@ -20,6 +20,7 @@ Abstract:
 @property(nonatomic,strong)UILabel *lblCalories;
 @property(nonatomic,strong)UILabel *lblDurationRun;
 @property(nonatomic,strong)UILabel *lblCaloriesRun;
+
 @end
 
 @implementation AAPLDetailViewController
@@ -42,7 +43,13 @@ Abstract:
 {
     [super viewWillDisappear:animated];
    // _activityDataManager = nil;
+    
+    
+    float totalCalBurned = [_lblCalories.text floatValue] + [_lblDurationRun.text floatValue];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BURN" object:[NSNumber numberWithFloat:totalCalBurned]];
 }
+
 #pragma mark - SlideNavigationController Methods -
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
@@ -176,6 +183,8 @@ Abstract:
 //		return 1;
 //	}
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

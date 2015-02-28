@@ -33,7 +33,13 @@
 @property (weak, nonatomic) IBOutlet XYPieChart *fatView;
 @property (weak, nonatomic) IBOutlet XYPieChart *burnCalorieView;
 
-@property(nonatomic, strong) NSMutableArray *slices;
+@property(nonatomic, strong) NSMutableArray *slicesIntake;
+@property(nonatomic, strong) NSMutableArray *slicesCarbo;
+@property(nonatomic, strong) NSMutableArray *slicesProt;
+@property(nonatomic, strong) NSMutableArray *slicesFat;
+@property(nonatomic, strong) NSMutableArray *slicesBurn;
 @property(nonatomic, strong) NSArray        *sliceColors;
+
+@property (nonatomic, assign) float calorieBurned;
 
 @end

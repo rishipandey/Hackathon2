@@ -10,6 +10,9 @@
 
 @interface TakeChallangeViewController ()
 
+@property (nonatomic, assign) float calBurned;
+@property (nonatomic, assign) float target;
+
 @end
 
 @implementation TakeChallangeViewController
@@ -20,31 +23,15 @@
     self.navigationItem.title = @"Take Challenge";
     self.mytextField.delegate = self;
     
-    self.slices = [NSMutableArray arrayWithCapacity:2];
-    for(int i = 0; i < 2; i ++)
-    {
-        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
-        [_slices addObject:one];
-    }
-    
-    self.sliceColors =[NSArray arrayWithObjects:
-                       [UIColor colorWithRed:246/255.0 green:155/255.0 blue:0/255.0 alpha:1],
-                       [UIColor colorWithRed:129/255.0 green:195/255.0 blue:29/255.0 alpha:1],
-                       [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
-                       [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
-                       [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
-    
-    [self.calorieIntakeView setDataSource:self];
-    [self.calorieIntakeView setDelegate:self];
-    [self.calorieIntakeView setStartPieAngle:M_PI_2];
-    [self.calorieIntakeView setAnimationSpeed:1.0];
-    [self.calorieIntakeView setLabelFont:[UIFont fontWithName:@"DBLCDTempBlack" size:24]];
-    [self.calorieIntakeView setLabelRadius:40];
-    [self.calorieIntakeView setShowPercentage:YES];
-    [self.calorieIntakeView setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
-    [self.calorieIntakeView setPieCenter:CGPointMake(75, 75)];
-    [self.calorieIntakeView setUserInteractionEnabled:NO];
-    [self.calorieIntakeView setLabelShadowColor:[UIColor blackColor]];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateBurnData:)
+                                                 name:@"BURN"
+                                               object:nil];
+}
+
+
+- (void)updateBurnData:(NSNotification*)note {
+    self.calBurned = [note.object floatValue];
 }
 
 
@@ -70,6 +57,42 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    
+    self.target = [textField.text floatValue];
+    
+    [self.slices removeAllObjects];
+    NSNumber *oneBurn;
+    NSNumber *twoBurn;
+    
+    if (self.calBurned == 0.0) {
+        oneBurn = [NSNumber numberWithFloat: 0.0];
+        twoBurn = [NSNumber numberWithFloat: (3000.0- self.calBurned)];
+    }
+    else {
+        oneBurn = [NSNumber numberWithFloat: self.calBurned];
+        twoBurn = [NSNumber numberWithFloat: (3000.0- self.calBurned)];
+    }
+    [self.slices addObject:oneBurn];
+    [self.slices addObject:twoBurn];
+    
+    self.sliceColors =[NSArray arrayWithObjects:
+                       [UIColor colorWithRed:255.0 green:0 blue:0.0 alpha:1],
+                       [UIColor colorWithRed:0.0 green:255.0 blue:0 alpha:1],nil];
+    
+    [self.calorieIntakeView setDataSource:self];
+    [self.calorieIntakeView setDelegate:self];
+    [self.calorieIntakeView setStartPieAngle:M_PI_2];
+    [self.calorieIntakeView setAnimationSpeed:1.0];
+    [self.calorieIntakeView setLabelFont:[UIFont fontWithName:@"DBLCDTempBlack" size:24]];
+    [self.calorieIntakeView setLabelRadius:40];
+    [self.calorieIntakeView setShowPercentage:YES];
+    [self.calorieIntakeView setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
+    [self.calorieIntakeView setPieCenter:CGPointMake(75, 75)];
+    [self.calorieIntakeView setUserInteractionEnabled:NO];
+    [self.calorieIntakeView setLabelShadowColor:[UIColor blackColor]];
+    
+    [self.calorieIntakeView reloadData];
+
     
     return YES;
 }

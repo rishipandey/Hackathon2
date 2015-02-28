@@ -8,11 +8,32 @@
 
 #import "HomeViewController.h"
 #import "LeftMenuViewController.h"
+#import "AppDelegate.h"
 
 @implementation HomeViewController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    
+    ///Burn
+    self.slicesBurn = [NSMutableArray arrayWithCapacity:2];
+    NSNumber *oneBurn;
+    NSNumber *twoBurn;
+    
+    if (self.calorieBurned == 0.0) {
+        oneBurn = [NSNumber numberWithFloat: 0.0];
+        twoBurn = [NSNumber numberWithFloat: (3000.0- self.calorieBurned)];
+    }
+    else {
+        oneBurn = [NSNumber numberWithFloat: self.calorieBurned];
+        twoBurn = [NSNumber numberWithFloat: (3000.0- self.calorieBurned)];
+    }
+    
+    
+    [self.slicesBurn addObject:oneBurn];
+    [self.slicesBurn addObject:twoBurn];
+    
     [self.calorieIntakeView reloadData];
     [self.fatView reloadData];
     [self.protineView reloadData];
@@ -20,9 +41,33 @@
     [self.burnCalorieView reloadData];
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+   // [[NSNotificationCenter defaultCenter] removeObserver:self name:@"BURN" object:nil];
+}
+
+
+- (void)updateBurnData:(NSNotification*)note {
+    self.calorieBurned = [note.object floatValue];
+}
+
+/*
+ #define RFERENCE_INTAKE_CAL @"3000"
+ #define RFERENCE_INTAKE_PROT @"50"
+ #define RFERENCE_INTAKE_FAT @"24"
+ #define RFERENCE_INTAKE_CARB @"310"
+ */
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateBurnData:)
+                                                 name:@"BURN"
+                                               object:nil];
 	
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:220.0/255.0 green:0.0 blue:0.0 alpha:1]];
 //    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
@@ -37,15 +82,54 @@
 	self.limitPanGestureSwitch.on = ([SlideNavigationController sharedInstance].panGestureSideOffset == 0) ? NO : YES;
 	self.slideOutAnimationSwitch.on = ((LeftMenuViewController *)[SlideNavigationController sharedInstance].leftMenu).slideOutAnimationEnabled;
     
-    ///
-    self.slices = [NSMutableArray arrayWithCapacity:2];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
-    for(int i = 0; i < 2; i ++)
-    {
-        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
-        [_slices addObject:one];
-    }
-   
+    ///Intake
+    self.slicesIntake = [NSMutableArray arrayWithCapacity:2];
+    
+    NSNumber *one = [NSNumber numberWithFloat: 3000.0];
+    NSNumber *two = [NSNumber numberWithFloat: (3000.0- [appDelegate.totalcalories floatValue])];
+
+    [self.slicesIntake addObject:one];
+    [self.slicesIntake addObject:two];
+    
+    ///Cabrohydrate
+    self.slicesCarbo = [NSMutableArray arrayWithCapacity:2];
+    
+    NSNumber *oneCarb = [NSNumber numberWithFloat: 700];
+    NSNumber *twoCarb = [NSNumber numberWithFloat: (700- [appDelegate.carbohydrateCount floatValue])];
+    
+    [self.slicesCarbo addObject:oneCarb];
+    [self.slicesCarbo addObject:twoCarb];
+
+    ///protin
+    
+    self.slicesProt = [NSMutableArray arrayWithCapacity:2];
+    
+    NSNumber *oneProt = [NSNumber numberWithFloat: 200];
+    NSNumber *twoProt = [NSNumber numberWithFloat: (200-[appDelegate.proteinCount floatValue])];
+    
+    [self.slicesProt addObject:oneProt];
+    [self.slicesProt addObject:twoProt];
+    
+    //Fat
+    
+    self.slicesFat = [NSMutableArray arrayWithCapacity:2];
+    
+    NSNumber *oneFat = [NSNumber numberWithFloat: 150];
+    NSNumber *twoFat = [NSNumber numberWithFloat: (150- [appDelegate.fatCount floatValue])];
+    
+    [self.slicesFat addObject:oneFat];
+    [self.slicesFat addObject:twoFat];
+    
+    ///Burn
+    self.slicesBurn = [NSMutableArray arrayWithCapacity:2];
+    
+    NSNumber *oneBurn = [NSNumber numberWithFloat: self.calorieBurned == 0.0 ? 0.0 : 3000.0];
+    NSNumber *twoBurn = [NSNumber numberWithFloat: (3000.0- self.calorieBurned)];
+    
+    [self.slicesBurn addObject:oneBurn];
+    [self.slicesBurn addObject:twoBurn];
     
     
     [self.calorieIntakeView setDataSource:self];
@@ -105,11 +189,8 @@
     [self.burnCalorieView setLabelShadowColor:[UIColor blackColor]];
     
     self.sliceColors =[NSArray arrayWithObjects:
-                       [UIColor colorWithRed:246/255.0 green:155/255.0 blue:0/255.0 alpha:1],
-                       [UIColor colorWithRed:129/255.0 green:195/255.0 blue:29/255.0 alpha:1],
-                       [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
-                       [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
-                       [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
+                       [UIColor colorWithRed:255.0f green:0 blue:0 alpha:1],
+                       [UIColor colorWithRed:0 green:255.0 blue:0 alpha:1],nil];
     
 //    [self.pieChartRight setDelegate:self];
 //    [self.pieChartRight setDataSource:self];
@@ -129,6 +210,7 @@
 //    //rotate up arrow
 //    self.downArrow.transform = CGAffineTransformMakeRotation(M_PI);
 }
+
 
 #pragma mark - SlideNavigationController Methods -
 
@@ -222,12 +304,32 @@
 
 - (NSUInteger)numberOfSlicesInPieChart:(XYPieChart *)pieChart
 {
-    return self.slices.count;
+    return 2;
 }
 
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index
 {
-    return [[self.slices objectAtIndex:index] intValue];
+    if(pieChart == self.calorieIntakeView)
+    {
+        return [[self.slicesIntake objectAtIndex:index] intValue];
+    }
+    else if (pieChart == self.protineView)
+    {
+        return [[self.slicesProt objectAtIndex:index] intValue];
+    }
+    else if (pieChart == self.fatView)
+    {
+        return [[self.slicesFat objectAtIndex:index] intValue];
+    }
+    else if (pieChart == self.carboHydrateView)
+    {
+        return [[self.slicesCarbo objectAtIndex:index] intValue];
+    }
+    else{
+        return [[self.slicesBurn objectAtIndex:index] intValue];
+    }
+    
+    
 }
 
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index

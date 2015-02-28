@@ -593,7 +593,7 @@
                             <view contentMode="scaleToFill" id="Hbv-xT-zYy" customClass="XYPieChart">
                                 <rect key="frame" x="95" y="209" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="0.4446913348" blue="0.89045169010000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kv7-40-HbO">
                                 <rect key="frame" x="49" y="417" width="222" height="30"/>
