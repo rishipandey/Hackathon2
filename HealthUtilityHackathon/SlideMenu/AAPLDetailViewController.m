@@ -20,6 +20,8 @@ Abstract:
 @property(nonatomic,strong)UILabel *lblCalories;
 @property(nonatomic,strong)UILabel *lblDurationRun;
 @property(nonatomic,strong)UILabel *lblCaloriesRun;
+@property(nonatomic,strong)UILabel *lblDurationDrive;
+@property(nonatomic,strong)UILabel *lblCaloriesDrive;
 
 @end
 
@@ -45,7 +47,7 @@ Abstract:
    // _activityDataManager = nil;
     
     
-    float totalCalBurned = [_lblCalories.text floatValue] + [_lblDurationRun.text floatValue];
+    float totalCalBurned = [_lblCalories.text floatValue] + [_lblDurationRun.text floatValue]+[_lblDurationDrive.text floatValue];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:[NSNumber numberWithFloat:totalCalBurned] forKey:@"totalCalBurned"];
@@ -173,7 +175,7 @@ Abstract:
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 3;
+	return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -255,6 +257,31 @@ Abstract:
 //            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ --%0.1f kCal",[AAPLDetailViewController formatTimeInterval:_activityDataManager.runningDuration],(_activityDataManager.walkingDuration/60)*1.8];
         }
     }
+    else if (indexPath.section == 3) {
+        if (indexPath.row == 0) {
+            cell.textLabel.hidden = YES;
+            cell.detailTextLabel.hidden = YES;
+            [_lblDurationDrive removeFromSuperview];
+            _lblDurationDrive = [[UILabel alloc] initWithFrame:CGRectMake(220, 10, 70, 20)];
+            [cell.contentView addSubview:_lblDurationDrive];
+            _lblDurationDrive.text =@"";
+            _lblDurationDrive.text = [AAPLDetailViewController formatTimeInterval:_activityDataManager.vehicularDuration];
+            
+            [_lblCaloriesDrive removeFromSuperview];
+            _lblCaloriesDrive = [[UILabel alloc] initWithFrame:CGRectMake(220, 35, 70, 20)];
+            [cell.contentView addSubview:_lblCaloriesDrive];
+            _lblCaloriesDrive.text  =@"";
+            _lblCaloriesDrive.text = [NSString stringWithFormat:@"%0.1f  Cal",(_activityDataManager.vehicularDuration/60)*1];
+            UILabel *lblDurationVal = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 70, 20)];
+            [cell.contentView addSubview:lblDurationVal];
+            lblDurationVal.text = @"Duration:";
+            UILabel *lblCaloriesVal = [[UILabel alloc] initWithFrame:CGRectMake(20, 35, 70, 20)];
+            [cell.contentView addSubview:lblCaloriesVal];
+            lblCaloriesVal.text = @"Calories:";
+            //            cell.textLabel.text = @"Calories:";
+            //            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ --%0.1f kCal",[AAPLDetailViewController formatTimeInterval:_activityDataManager.runningDuration],(_activityDataManager.walkingDuration/60)*1.8];
+        }
+    }
 
 	return cell;
 }
@@ -268,6 +295,8 @@ Abstract:
 			return @"Pedometer";
         case 2:
             return @"Running";
+        case 3:
+            return @"Driving";
 
 	}
 	return @"";
