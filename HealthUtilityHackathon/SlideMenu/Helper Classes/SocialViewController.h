@@ -13,6 +13,7 @@
 @interface SocialViewController : UIViewController <SlideNavigationControllerDelegate>
 
 - (IBAction)takeChallangeButtonPressed:(id)sender;
--(IBAction)shareMedia:(id)sender;
+- (IBAction)shareMedia:(id)sender;
+- (IBAction)showUnderDevelopmentAlert:(id)sender;
 
 @end

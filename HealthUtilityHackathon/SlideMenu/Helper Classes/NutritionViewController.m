@@ -209,4 +209,14 @@ CGPoint location = [touch locationInView:self.view];
     
 }
 
+
+-(IBAction)showFoodMenu:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Under development"
+                                                        message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
 @end

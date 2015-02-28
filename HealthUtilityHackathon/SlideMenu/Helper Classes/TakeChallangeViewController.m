@@ -8,6 +8,8 @@
 
 #import "TakeChallangeViewController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface TakeChallangeViewController ()
 
 @property (nonatomic, assign) float calBurned;
@@ -22,6 +24,12 @@
     
     self.navigationItem.title = @"Take Challenge";
     self.mytextField.delegate = self;
+    
+    self.mytextField.borderStyle=UITextBorderStyleNone;
+    self.mytextField.layer.cornerRadius=8.0f;
+    self.mytextField.layer.masksToBounds=YES;
+    self.mytextField.layer.borderColor=[[UIColor redColor] CGColor];
+    self.mytextField.layer.borderWidth= 1.0f;
 }
 
 //-(void)viewWillAppear:(BOOL)animated{
@@ -161,6 +169,15 @@
     //self.selectedSliceLabel.text = [NSString stringWithFormat:@"$%@",[self.slices objectAtIndex:index]];
 }
 
+
+- (IBAction)showUnderDevelopmentAlert:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Under development"
+                                                        message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
 
 
 @end

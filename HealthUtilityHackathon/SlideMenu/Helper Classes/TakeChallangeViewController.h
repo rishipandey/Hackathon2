@@ -19,4 +19,6 @@
 @property(nonatomic, strong) NSMutableArray *slices;
 @property(nonatomic, strong) NSArray *sliceColors;
 
+- (IBAction)showUnderDevelopmentAlert:(id)sender;
+
 @end

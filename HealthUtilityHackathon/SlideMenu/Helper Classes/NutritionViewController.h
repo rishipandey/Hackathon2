@@ -22,4 +22,6 @@
 -(IBAction)showlunch:(id)sender;
 -(IBAction)showDinner:(id)sender;
 
+-(IBAction)showFoodMenu:(id)sender;
+
 @end
