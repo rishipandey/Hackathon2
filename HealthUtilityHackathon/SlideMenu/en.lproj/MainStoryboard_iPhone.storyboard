@@ -153,6 +153,21 @@
             </objects>
             <point key="canvasLocation" x="1040" y="-222"/>
         </scene>
+        <!--Recommendation View Controller-->
+        <scene sceneID="MpP-z0-a6h">
+            <objects>
+                <viewController id="Tq6-0G-nlw" customClass="RecommendationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sia-mT-bvH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tn3-4I-etl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6BN-gX-ItU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509" y="-869"/>
+        </scene>
         <!--No Menu-->
         <scene sceneID="b5b-is-lY2">
             <objects>
@@ -251,9 +266,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oCe-hx-KrH">
-                                <rect key="frame" x="213" y="96" width="59" height="30"/>
+                                <rect key="frame" x="218" y="96" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1100 cal">
+                                <state key="normal" title="580 cal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -261,9 +276,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L2r-W0-XzH">
-                                <rect key="frame" x="213" y="251" width="50" height="30"/>
+                                <rect key="frame" x="209" y="251" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="800 cal">
+                                <state key="normal" title="1196 cal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -271,9 +286,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ufg-Fm-Vb6">
-                                <rect key="frame" x="213" y="425" width="50" height="30"/>
+                                <rect key="frame" x="209" y="425" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="700 cal">
+                                <state key="normal" title="1200 cal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -281,22 +296,22 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breakfast.jpg" id="iDk-kx-tQb">
-                                <rect key="frame" x="16" y="124" width="156" height="128"/>
+                                <rect key="frame" x="16" y="124" width="150" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunch.jpg" id="6BI-Wt-xk3">
-                                <rect key="frame" x="16" y="294" width="156" height="128"/>
+                                <rect key="frame" x="16" y="294" width="150" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dinner.jpg" id="ECT-cs-1SV">
-                                <rect key="frame" x="16" y="459" width="156" height="98"/>
+                                <rect key="frame" x="16" y="459" width="150" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on calories for details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pX8-Hx-kpe">
                                 <rect key="frame" x="182" y="86" width="202" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YTF-MK-4eV">
@@ -429,7 +444,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agL-dN-C7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="201"/>
+            <point key="canvasLocation" x="2027" y="505"/>
         </scene>
         <!--Lipids Burnt-->
         <scene sceneID="wwU-EG-9Wp">
@@ -573,6 +588,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Tq6-0G-nlw" kind="push" id="PYe-H3-VrM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
