@@ -160,9 +160,21 @@
                     <view key="view" contentMode="scaleToFill" id="Sia-mT-bvH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" id="1hY-oy-yxG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentInset" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="tn3-4I-etl"/>
+                    <connections>
+                        <outlet property="mainScrollView" destination="1hY-oy-yxG" id="QYE-1I-rWC"/>
+                        <outlet property="view" destination="Sia-mT-bvH" id="Qsu-rY-mKU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BN-gX-ItU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

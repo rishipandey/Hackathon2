@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecommendationViewController : UIViewController
+@interface RecommendationViewController : UIViewController <UIScrollViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UIScrollView *mainScrollView;
+
+@property (nonatomic, strong) IBOutlet UILabel *bottomLabel;
 
 @end

@@ -73,15 +73,16 @@
 		E796D9231AA11B3700EE1603 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D9211AA11B3700EE1603 /* SocialViewController.m */; };
 		E796D9251AA11B5200EE1603 /* 001_bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = E796D9241AA11B5200EE1603 /* 001_bkg.png */; };
 		E796D9281AA139F700EE1603 /* RecommendationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D9271AA139F700EE1603 /* RecommendationViewController.m */; };
-		E796D9391AA13EFA00EE1603 /* exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = E796D9351AA13EFA00EE1603 /* exercise.png */; };
-		E796D93A1AA13EFA00EE1603 /* gym.png in Resources */ = {isa = PBXBuildFile; fileRef = E796D9361AA13EFA00EE1603 /* gym.png */; };
-		E796D93B1AA13EFA00EE1603 /* yoga.png in Resources */ = {isa = PBXBuildFile; fileRef = E796D9371AA13EFA00EE1603 /* yoga.png */; };
-		E796D93C1AA13EFA00EE1603 /* eatGood.png in Resources */ = {isa = PBXBuildFile; fileRef = E796D9381AA13EFA00EE1603 /* eatGood.png */; };
 		FB2415851AA1295300BA381B /* TakeChallangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2415841AA1295300BA381B /* TakeChallangeViewController.m */; };
 		FB2415891AA12C9D00BA381B /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415861AA12C9D00BA381B /* favorites.png */; };
 		FB24158A1AA12C9D00BA381B /* goal.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415871AA12C9D00BA381B /* goal.png */; };
 		FB24158B1AA12C9D00BA381B /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415881AA12C9D00BA381B /* memory.png */; };
 		FB24158D1AA1306300BA381B /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = FB24158C1AA1306300BA381B /* ICON.png */; };
+		FB2415961AA14C7E00BA381B /* recommendation1.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415921AA14C7E00BA381B /* recommendation1.png */; };
+		FB2415971AA14C7E00BA381B /* recommendation2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415931AA14C7E00BA381B /* recommendation2.png */; };
+		FB2415981AA14C7E00BA381B /* recommendation3.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415941AA14C7E00BA381B /* recommendation3.png */; };
+		FB2415991AA14C7E00BA381B /* recommendation4.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2415951AA14C7E00BA381B /* recommendation4.png */; };
+		FB24159B1AA14D6800BA381B /* bg-black.png in Resources */ = {isa = PBXBuildFile; fileRef = FB24159A1AA14D6800BA381B /* bg-black.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,16 +197,17 @@
 		E796D9241AA11B5200EE1603 /* 001_bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001_bkg.png; sourceTree = "<group>"; };
 		E796D9261AA139F700EE1603 /* RecommendationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationViewController.h; sourceTree = "<group>"; };
 		E796D9271AA139F700EE1603 /* RecommendationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationViewController.m; sourceTree = "<group>"; };
-		E796D9351AA13EFA00EE1603 /* exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise.png; sourceTree = "<group>"; };
-		E796D9361AA13EFA00EE1603 /* gym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gym.png; sourceTree = "<group>"; };
-		E796D9371AA13EFA00EE1603 /* yoga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoga.png; sourceTree = "<group>"; };
-		E796D9381AA13EFA00EE1603 /* eatGood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eatGood.png; sourceTree = "<group>"; };
 		FB2415831AA1295300BA381B /* TakeChallangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeChallangeViewController.h; sourceTree = "<group>"; };
 		FB2415841AA1295300BA381B /* TakeChallangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeChallangeViewController.m; sourceTree = "<group>"; };
 		FB2415861AA12C9D00BA381B /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
 		FB2415871AA12C9D00BA381B /* goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goal.png; sourceTree = "<group>"; };
 		FB2415881AA12C9D00BA381B /* memory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memory.png; sourceTree = "<group>"; };
 		FB24158C1AA1306300BA381B /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
+		FB2415921AA14C7E00BA381B /* recommendation1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommendation1.png; sourceTree = "<group>"; };
+		FB2415931AA14C7E00BA381B /* recommendation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommendation2.png; sourceTree = "<group>"; };
+		FB2415941AA14C7E00BA381B /* recommendation3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommendation3.png; sourceTree = "<group>"; };
+		FB2415951AA14C7E00BA381B /* recommendation4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommendation4.png; sourceTree = "<group>"; };
+		FB24159A1AA14D6800BA381B /* bg-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-black.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,10 +392,11 @@
 		15E7D319190C2894002EAE3F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E796D9351AA13EFA00EE1603 /* exercise.png */,
-				E796D9361AA13EFA00EE1603 /* gym.png */,
-				E796D9371AA13EFA00EE1603 /* yoga.png */,
-				E796D9381AA13EFA00EE1603 /* eatGood.png */,
+				FB24159A1AA14D6800BA381B /* bg-black.png */,
+				FB2415921AA14C7E00BA381B /* recommendation1.png */,
+				FB2415931AA14C7E00BA381B /* recommendation2.png */,
+				FB2415941AA14C7E00BA381B /* recommendation3.png */,
+				FB2415951AA14C7E00BA381B /* recommendation4.png */,
 				FB24158C1AA1306300BA381B /* ICON.png */,
 				FB2415861AA12C9D00BA381B /* favorites.png */,
 				FB2415871AA12C9D00BA381B /* goal.png */,
@@ -557,22 +560,23 @@
 				15371EF71728E3B400A508F4 /* Default@2x.png in Resources */,
 				15E7D31F190C33A5002EAE3F /* leftMenu.jpg in Resources */,
 				15371EF91728E3B400A508F4 /* Default-568h@2x.png in Resources */,
+				FB2415991AA14C7E00BA381B /* recommendation4.png in Resources */,
 				E796D8F91AA112FB00EE1603 /* dinner.jpg in Resources */,
 				15E7D31B190C289E002EAE3F /* animation.png in Resources */,
+				FB2415981AA14C7E00BA381B /* recommendation3.png in Resources */,
 				E796D8DF1AA0F5AF00EE1603 /* slider_maximum@2x.png in Resources */,
-				E796D93C1AA13EFA00EE1603 /* eatGood.png in Resources */,
+				FB2415961AA14C7E00BA381B /* recommendation1.png in Resources */,
 				15371EFC1728E3B400A508F4 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E796D8E21AA0F5AF00EE1603 /* sliderhandle@2x.png in Resources */,
-				E796D93B1AA13EFA00EE1603 /* yoga.png in Resources */,
 				FB24158D1AA1306300BA381B /* ICON.png in Resources */,
 				E796D9251AA11B5200EE1603 /* 001_bkg.png in Resources */,
 				E796D8DD1AA0F5AF00EE1603 /* slider_minimum.png in Resources */,
 				15371EFF1728E3B400A508F4 /* MainStoryboard_iPad.storyboard in Resources */,
-				E796D9391AA13EFA00EE1603 /* exercise.png in Resources */,
+				FB2415971AA14C7E00BA381B /* recommendation2.png in Resources */,
 				FB24158A1AA12C9D00BA381B /* goal.png in Resources */,
+				FB24159B1AA14D6800BA381B /* bg-black.png in Resources */,
 				15CBD6BE172BBB3600F0C53E /* menu-button@2x.png in Resources */,
 				15CBD6C0172BBB7100F0C53E /* menu-button.png in Resources */,
-				E796D93A1AA13EFA00EE1603 /* gym.png in Resources */,
 				E796D8FA1AA112FB00EE1603 /* breakfast.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
