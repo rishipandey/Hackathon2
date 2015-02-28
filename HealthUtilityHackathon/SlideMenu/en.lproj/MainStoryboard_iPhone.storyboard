@@ -537,6 +537,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareMedia:" destination="7J7-r3-Wyp" eventType="touchUpInside" id="Ae1-2a-mIo"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memory.png" id="fz2-V9-gau">
                                 <rect key="frame" x="50" y="100" width="30" height="30"/>

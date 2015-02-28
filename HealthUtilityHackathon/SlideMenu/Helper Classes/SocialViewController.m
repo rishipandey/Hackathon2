@@ -40,25 +40,31 @@
 
 
 - (IBAction)takeChallangeButtonPressed:(id)sender {
-
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+                                                             bundle: nil];
+    TakeChallangeViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TakeChallangeViewController"];
     
-        NSArray *objectsToShare = @[@"Cocoa Puff! Health Utility"];
-        
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
-        
-        NSArray *excludeActivities = @[UIActivityTypePrint,
-                                       UIActivityTypeAssignToContact,
-                                       UIActivityTypeSaveToCameraRoll,
-                                       UIActivityTypeAddToReadingList,
-                                       ];
-        
-        activityVC.excludedActivityTypes = excludeActivities;
-        
-        [self presentViewController:activityVC animated:YES completion:nil];
-        
-    
-
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
+-(IBAction)shareMedia:(id)sender{
+
+    
+    NSArray *objectsToShare = @[@"Cocoa Puff! Health Utility"];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   ];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+
+}
 
 @end
