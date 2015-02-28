@@ -47,7 +47,7 @@ Abstract:
    // _activityDataManager = nil;
     
     
-    float totalCalBurned = [_lblCalories.text floatValue] + [_lblDurationRun.text floatValue]+[_lblDurationDrive.text floatValue];
+    float totalCalBurned = [_lblCalories.text floatValue] + [_lblCaloriesRun.text floatValue]+[_lblCaloriesDrive.text floatValue];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:[NSNumber numberWithFloat:totalCalBurned] forKey:@"totalCalBurned"];
@@ -299,7 +299,7 @@ Abstract:
         case 2:
             return @"Running";
         case 3:
-            return @"Driving";
+            return @"Cycling";
 
 	}
 	return @"";
