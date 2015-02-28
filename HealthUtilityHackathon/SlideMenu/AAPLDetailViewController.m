@@ -171,7 +171,10 @@ Abstract:
 #pragma mark - Table View
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;
+    if (section == 0) {
+        return 30;
+    }
+    return 5;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

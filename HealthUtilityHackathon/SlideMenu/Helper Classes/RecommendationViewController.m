@@ -42,12 +42,12 @@
 - (void)initializeMainScrollView {
     self.mainScrollView.pagingEnabled = YES;
     
-    NSUInteger numberOfImages = 0;
+    NSInteger numberOfImages = 0;
     NSInteger totalImages=0;
     CGFloat scrollContentWidth = 0;
     
     for (; ; numberOfImages++) {
-        NSString *imageName = [NSString stringWithFormat:@"recommendation%d.png", (numberOfImages + 1)];
+        NSString *imageName = [NSString stringWithFormat:@"recommendation%d.jpeg", (numberOfImages + 1)];
         UIImage *image = [UIImage imageNamed:imageName];
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -69,14 +69,16 @@
         totalImages++;
     }
     
-    [self.mainScrollView setContentSize:CGSizeMake(scrollContentWidth, self.mainScrollView.bounds.size.height)];
+    [self.mainScrollView setContentSize:CGSizeMake(scrollContentWidth, self.mainScrollView.frame.size.height)];
     self.mainScrollView.delegate = self;
+    self.mainScrollView.alwaysBounceVertical = NO;
+    
     [self.view sendSubviewToBack:self.mainScrollView];
 }
 
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    [self.timer invalidate];
+    //[self.timer invalidate];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
