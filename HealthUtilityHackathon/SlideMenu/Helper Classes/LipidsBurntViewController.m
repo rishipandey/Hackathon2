@@ -17,10 +17,10 @@
 {
 	[super viewDidLoad];
     
-    
     self.navigationItem.title = @"Lipids Burnt";
     
     self.segmentControl.selectedSegmentIndex = 1;
+    
     
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:220.0/255.0 green:0.0 blue:0.0 alpha:1]];
 //    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
@@ -30,7 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    OVGraphView *graphview=[[OVGraphView alloc]initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 400) ContentSize:CGSizeMake(960, 300)];
+    OVGraphView *graphview=[[OVGraphView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 400) ContentSize:CGSizeMake(960, 300)];
     graphview.plotContainer.reverse=NO;
     graphview.plotContainer.graphcolor=[UIColor colorWithRed:0.31 green:0.73 blue:0.78 alpha:1.0];
     [self.view addSubview:graphview];
@@ -93,7 +93,12 @@
 
 
 - (IBAction)segmentSelectionChanged:(id)sender {
-    NSLog(@"I am clicked");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Will Implement this post hackathon."
+                                                        message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 
