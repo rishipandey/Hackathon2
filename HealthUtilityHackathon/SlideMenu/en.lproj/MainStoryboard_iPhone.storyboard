@@ -653,7 +653,7 @@
                                     <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <view contentMode="scaleToFill" id="Hbv-xT-zYy" customClass="XYPieChart">
                                 <rect key="frame" x="95" y="209" width="150" height="150"/>
